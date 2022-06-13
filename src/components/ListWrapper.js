@@ -1,16 +1,13 @@
 import React from "react";
-import ListItem from "./ListItem.js";
-import './ListWrapper.css';
-import {twitterAccounts}  from "../data.js";
+import ListItem from "./ListItem";
+import styles from "./ListWrapper.module.scss";
 
-const ListWrapper = () => {
-    return (
-        <ul className={"listWrapper_wrapper"}>
-            {twitterAccounts.map(item => (
-                <ListItem key={item.name} {...item}></ListItem>
-            ))}
-        </ul>
-    )
-}
+const ListWrapper = props => (
+  <ul className={styles.wrapper}>
+    {props.items.map(item => (
+      <ListItem key={item.name} {...item} />
+    ))}
+  </ul>
+);
 
 export default ListWrapper;
